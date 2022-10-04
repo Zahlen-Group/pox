@@ -2,5 +2,16 @@
   "build": {
 		"dockerfile": "Dockerfile"
 	},
+  "customizations": {
+    "codespaces": {
+      "repositories": {
+        "Zahlen-Group/ei": {
+          "permissions": {
+            "issues": "read"
+          }
+        }
+      }
+    }
+  },
 	"remoteUser": "pox"
 }
