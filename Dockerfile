@@ -28,12 +28,14 @@ RUN apt-get update && apt-get install -y git \
 RUN adduser pox && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers && usermod -aG sudo pox
 USER pox
 
-#ENV PATH="/home/pox/.local/bin:$PATH"
+ENV PATH="/home/pox/.local/bin:$PATH"
 
 WORKDIR /home/pox
-RUN git clone -b halosaur --single-branch https://github.com/MurphyMc/pox.git
+RUN mkdir .ssh && ssh-keyscan -t rsa github.com >> .ssh/known_hosts
+COPY --chown=pox:pox id_rsa .ssh/id_rsa
+RUN git clone -b halosaur-dev --single-branch git@github.com:Zahlen-Group/pox.git
 WORKDIR pox/ext
-COPY --chown=pox:pox ext/ei ei
-#RUN git clone -b dev --single-branch git@github.com:Zahlen-Group/ei.git
+#COPY --chown=pox:pox ext/ei ei
+RUN git clone -b dev --single-branch git@github.com:Zahlen-Group/ei.git
 WORKDIR ei
-#RUN scripts/build_all.sh --install --with-tests --clean --parallel
+RUN scripts/build_all.sh --install
