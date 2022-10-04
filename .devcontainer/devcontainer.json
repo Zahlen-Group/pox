@@ -6,14 +6,10 @@
     "codespaces": {
       "repositories": {
         "Zahlen-Group/ei": {
-          "permissions": {
-            "contents": "read"
-          }
+          "permissions": "read-all"
         },
         "Zahlen-Group/pox": {
-          "permissions": {
-            "contents": "read"
-          }
+          "permissions": "read-all"
         }
       }
     }
