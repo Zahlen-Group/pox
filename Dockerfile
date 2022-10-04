@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/base:ubuntu-20.04
+FROM mcr.microsoft.com/devcontainers/base:ubuntu-22.04
 
 RUN apt-get update && apt-get install -y git \
            cmake \
@@ -25,7 +25,7 @@ RUN apt-get update && apt-get install -y git \
            python3-kazoo \
            zookeeper
 
-RUN adduser pox && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers && usermod -aG sudo pox
+RUN adduser -D pox && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers && usermod -aG sudo pox
 USER pox
 
 ENV PATH="/home/pox/.local/bin:$PATH"
