@@ -25,7 +25,7 @@ RUN apt-get update && apt-get install -y git \
            python3-kazoo \
            zookeeper
 
-RUN useradd -D pox && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers && usermod -aG sudo pox
+RUN useradd -ms /bin/bash pox && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers && usermod -aG sudo pox
 USER pox
 
 ENV PATH="/home/pox/.local/bin:$PATH"
