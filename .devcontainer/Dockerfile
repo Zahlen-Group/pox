@@ -25,14 +25,15 @@ RUN apt-get update && apt-get install -y git \
            python3-kazoo \
            zookeeper
 
-RUN useradd -ms /bin/bash pox && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers && usermod -aG sudo pox
+# RUN useradd -ms /bin/bash pox &&
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers && usermod -aG sudo pox
 USER pox
 
 ENV PATH="/home/pox/.local/bin:$PATH"
 
-WORKDIR /home/pox
-RUN git clone -b halosaur-dev --single-branch git@github.com:Zahlen-Group/pox.git
-WORKDIR pox/ext
+#WORKDIR /home/pox
+#RUN git clone -b halosaur-dev --single-branch git@github.com:Zahlen-Group/pox.git
+WORKDIR ext
 RUN git clone -b dev --single-branch git@github.com:Zahlen-Group/ei.git
 WORKDIR ei
 RUN scripts/build_all.sh --install
