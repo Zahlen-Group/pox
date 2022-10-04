@@ -31,8 +31,9 @@ USER pox
 ENV PATH="/home/pox/.local/bin:$PATH"
 
 WORKDIR /home/pox
-RUN git clone -b halosaur-dev --single-branch git@github.com:Zahlen-Group/pox.git
-WORKDIR pox/ext
-RUN git clone -b dev --single-branch git@github.com:Zahlen-Group/ei.git
-WORKDIR ei
-RUN scripts/build_all.sh --install
+# Forget it.
+#RUN git clone -b halosaur-dev --single-branch git@github.com:Zahlen-Group/pox.git
+#WORKDIR pox/ext
+#RUN git clone -b dev --single-branch git@github.com:Zahlen-Group/ei.git
+#WORKDIR ei
+#RUN scripts/build_all.sh --install
