@@ -7,12 +7,12 @@
       "repositories": {
         "Zahlen-Group/ei": {
           "permissions": {
-            "issues": "read"
+            "contents": "read"
           }
         },
         "Zahlen-Group/pox": {
           "permissions": {
-            "issues": "read"
+            "contents": "read"
           }
         }
       }
