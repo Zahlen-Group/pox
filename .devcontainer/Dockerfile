@@ -31,7 +31,8 @@ USER pox
 ENV PATH="/home/pox/.local/bin:$PATH"
 
 WORKDIR /home/pox
-RUN git clone -b halosaur-dev --single-branch git@github.com:Zahlen-Group/pox.git
+#RUN git clone -b halosaur-dev --single-branch git@github.com:Zahlen-Group/pox.git
+RUN cp /var/lib/docker/codespacemount/workspace/pox .
 WORKDIR pox/ext
 RUN git clone -b dev --single-branch git@github.com:Zahlen-Group/ei.git
 WORKDIR ei
