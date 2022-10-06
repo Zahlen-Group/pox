@@ -7,9 +7,6 @@
       "repositories": {
         "Zahlen-Group/ei": {
           "permissions": "read-all"
-        },
-        "Zahlen-Group/pox": {
-          "permissions": "read-all"
         }
       }
     }
