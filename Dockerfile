@@ -1,5 +1,6 @@
-# NOTE: enable ipv6 in Docker daemon, or tests will fail
-#       https://docs.docker.com/config/daemon/ipv6
+# NB: enable ipv6 in Docker daemon, or tests will fail
+#     https://docs.docker.com/config/daemon/ipv6
+# NB: WSL2 kernel 
 FROM ubuntu:22.04
 
 ARG USER=groove
@@ -18,10 +19,11 @@ RUN apt-get update && \
           python3-fasteners \
           cppcheck \
           sudo \
-# for tests
+# tests
           libcap2-bin \
 					netcat-openbsd \
           wget \
+          gawk \ # some tests rely on gawk
 # extra
 					tmux \
           cmake-curses-gui \
