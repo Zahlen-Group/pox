@@ -1,6 +1,5 @@
 # NB: enable ipv6 in Docker daemon, or tests will fail
 #     https://docs.docker.com/config/daemon/ipv6
-# NB: WSL2 kernel 
 FROM ubuntu:22.04
 
 ARG USER=groove
@@ -23,7 +22,7 @@ RUN apt-get update && \
           libcap2-bin \
 					netcat-openbsd \
           wget \
-          gawk \ # some tests rely on gawk
+          gawk \
 # extra
 					tmux \
           cmake-curses-gui \
@@ -35,6 +34,7 @@ RUN apt-get update && \
           python3-kazoo \
           zookeeper
 
+# EI scripts rely on sudo; make user w/ passwordless sudo
 RUN useradd -ms /bin/bash $USER && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers && usermod -aG sudo $USER
 USER $USER
 
