@@ -6,7 +6,9 @@
     "codespaces": {
       "repositories": {
         "Zahlen-Group/ei": {
-          "permissions": "read-all"
+          "permissions": {
+            "actions": "read"
+          }
         }
       }
     }
