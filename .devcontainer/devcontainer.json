@@ -13,5 +13,5 @@
       }
     }
   },
-  "postCreateCommand": ".devcontainer/postCreateCommand.sh"
+  "onCreateCommand": ".devcontainer/onCreateCommand.sh"
 }
