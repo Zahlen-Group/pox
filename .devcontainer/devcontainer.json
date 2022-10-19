@@ -7,7 +7,7 @@
       "repositories": {
         "Zahlen-Group/ei": {
           "permissions": {
-            "actions": "read"
+             "contents": "read"
           }
         }
       }
