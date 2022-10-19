@@ -1,4 +1,4 @@
 #/usr/bin/env bash -x
 
-cd ei
+cd ext/ei
 scripts/build_all.sh --install --with-tests --clean --parallel
